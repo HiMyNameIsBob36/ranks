@@ -2,7 +2,7 @@
     "format_version": 2,
     "header": {
         "name": "§sCosmos Teams§r",
-        "description": "§l§sCosmos Teams§r is a mod that lets users make teams.\n§oFeatures include team homes, team chat, and more!",
+        "description": "§l§sCosmos Teams§r is a mod that lets users make teams.\n§oFeatures includes team chat, homes, teleporting and more!",
         "uuid": "56d78a12-e34b-4c12-a891-fb8231c54321",
         "version": [1, 0, 0],
         "min_engine_version": [1, 20, 0]
