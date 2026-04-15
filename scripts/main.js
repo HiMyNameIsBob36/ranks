@@ -57,7 +57,7 @@ world.beforeEvents.chatSend.subscribe((data) => {
         }
         const teamMembers = teams[myTeamName].members;
         world.getAllPlayers().filter(p => teamMembers.includes(p.name)).forEach(p => {
-            p.sendMessage(`§b[Team Chat] §f${sender.name}: ${message}`);
+            p.sendMessage(`§7[§l§sTEAM§r§7] <§f${sender.name}> ${message}`);
         });
         return;
     }
@@ -85,23 +85,23 @@ world.beforeEvents.chatSend.subscribe((data) => {
                     settings: { tp: true, homes: true }
                 };
                 saveTeams(teams);
-                sender.sendMessage(`§aSuccess: Team '${name}' created!`);
+                sender.sendMessage(`§l§a+§f Team '${name}' created!`);
                 break;
 
             case "list":
-                sender.sendMessage("§b--- All Teams ---");
+                sender.sendMessage("§s§l--- All Teams ---");
                 for (const [n, t] of Object.entries(teams)) {
                     sender.sendMessage(`§e${n}: §f${t.members.join(", ")}`);
                 }
                 break;
 
             case "request":
-                if (myTeamName) return sender.sendMessage("§cError: Leave your team first.");
+                if (myTeamName) return sender.sendMessage("§l§c-§f Leave your team first.");
                 const targetT = teams[args[2]];
                 if (!targetT) return sender.sendMessage("§cError: Team not found.");
                 if (!targetT.requests.includes(sender.name)) targetT.requests.push(sender.name);
                 saveTeams(teams);
-                sender.sendMessage("§aRequest sent!");
+                sender.sendMessage("§a§l+ §fRequest sent!");
                 break;
 
             case "invites":
