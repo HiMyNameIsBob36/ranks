@@ -18,10 +18,11 @@ function findMemberInTeam(team, inputName) {
 
 function sendFullHelp(player) {
     player.sendMessage("§l§s--- Cosmos Teams Command List ---");
-    player.sendMessage("§s.team §7- Show this list (Note: You can only be in 1 team)");
+    player.sendMessage("§s.team §7- Show this list");
     player.sendMessage("§s.team list §7- View all teams and members");
     player.sendMessage("§s.team create {name} §7- Start your own team");
     player.sendMessage("§s.team request {team} §7- Request to join a team");
+    player.sendMessage("§o§7You may only be apart of 1 team at a time.");
     player.sendMessage("§s.team leave §7- Exit your current team");
     player.sendMessage("§s.team disband §7- Delete team (Owner only)");
     player.sendMessage("§s.team tp {user} §7- Teleport to teammate");
@@ -33,6 +34,7 @@ function sendFullHelp(player) {
     player.sendMessage("§s.team home §7- TP to team home");
     player.sendMessage("§s.team home set §7- Set home at current spot (Owner)");
     player.sendMessage("§s.team chat §7- Toggle private team chat");
+    player.sendMessage("§o§7v1.1 §r- §7§o@samlovesspace production");
 }
 
 // --- Join Notification ---
