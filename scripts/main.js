@@ -196,19 +196,19 @@ world.beforeEvents.chatSend.subscribe((data) => {
 
             case "leave":
                 if (!team) return;
-                if (team.owner === sender.name) return sender.sendMessage("§cUse '.team disband' to delete the team.");
+                if (team.owner === sender.name) return sender.sendMessage("§c§l-§r§f Your the owner! If you want to remove the team, you can use '.team disband'");
                 team.members = team.members.filter(m => m !== sender.name);
                 team.managers = team.managers.filter(m => m !== sender.name);
                 saveTeams(teams);
-                sender.sendMessage("§eLeft team.");
+                sender.sendMessage("§c§l-§r§f You left the team.");
                 break;
 
             case "disband":
-                if (!team || team.owner !== sender.name) return sender.sendMessage("§cOwner only.");
-                if (args[2] !== "confirm") return sender.sendMessage("§6Type '.team disband confirm' to delete your team!");
+                if (!team || team.owner !== sender.name) return sender.sendMessage("§c§l-§r§f You must be the owner of the team.");
+                if (args[2] !== "confirm") return sender.sendMessage("§6§l!§r§fAre you sure? Type '.team disband confirm' to delete your team! §l§6This action is irreversible!");
                 delete teams[myTeamName];
                 saveTeams(teams);
-                sender.sendMessage("§4Team disbanded.");
+                sender.sendMessage("§a§l+§r§f Team disbanded.");
                 break;
 
             default:
